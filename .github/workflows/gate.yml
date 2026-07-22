@@ -1,0 +1,20 @@
+name: Deploy Gate Simulation
+ 
+on:
+  push:
+ 
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run fake tests
+        run: |
+          echo "กำลังรัน test..."
+          exit 0        # exit 0 = test ผ่าน / exit 1 = test พัง
+ 
+  deploy:
+    needs: test                   # ⛩️ ประตู: รอ test ผ่านเท่านั้น
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fake deploy
+        run: echo "🚀 Deploy ขึ้น production สำเร็จ!"
