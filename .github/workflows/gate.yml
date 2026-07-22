@@ -10,7 +10,7 @@ jobs:
       - name: Run fake tests
         run: |
           echo "กำลังรัน test..."
-          exit 0        # exit 0 = test ผ่าน / exit 1 = test พัง
+          exit 1        # exit 0 = test ผ่าน / exit 1 = test พัง
  
   deploy:
     needs: test                   # ⛩️ ประตู: รอ test ผ่านเท่านั้น
