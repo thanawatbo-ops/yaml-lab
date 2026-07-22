@@ -1,6 +1,15 @@
+name: Hello Workflow
+ 
+on:
+  push:
+ 
 jobs:
   greet:
     runs-on: ubuntu-latest
-        steps:                    # ← ตั้งใจย่อผิด
+    steps:
       - name: Say hello
-        run: echo "hello"
+        run: echo "สวัสดี GitHub Actions!"
+      - name: Show date
+        run: date
+      - name: Show machine info
+        run: uname -a
