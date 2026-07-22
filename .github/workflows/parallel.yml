@@ -1,0 +1,21 @@
+name: Steps vs Jobs
+ 
+on:
+  push:
+ 
+jobs:
+  job-a:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "A1 เริ่มงาน"
+      - name: Step 2
+        run: sleep 10          # แกล้งทำงานนาน 10 วินาที
+      - name: Step 3
+        run: echo "A3 เสร็จแล้ว"
+ 
+  job-b:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Quick task
+        run: echo "B ทำงานเร็วมาก เสร็จก่อนแน่นอน"
